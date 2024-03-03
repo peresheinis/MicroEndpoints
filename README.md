@@ -86,14 +86,13 @@ In this example, `MyAsyncEndpoint` is an asynchronous endpoint that handles a `M
 The result of an endpoint can be of any type. However, it's recommended to use `IResult` for its flexibility and expressiveness. `IResult` allows you to easily produce different HTTP responses.
 ```csharp
 public class MyEndpoint : EndpointBaseAsync
-    .WithoutRequest
-    .WithIResult
+    .WithQuery<string, int, int>
+    .WithResult<PagedList<MyResponse>>
 {
   [Get("api/authors")]
-  public override async Task<IResult> HandleAsync(CancellationToken cancellationToken = default)
+  public override async Task<PagedList<MyResponse>> HandleAsync(string searchQuery, int page, int pageSize, CancellationToken cancellationToken = default)
   {
     // Implementation...
-    return Ok();
   }
 }
 ```
