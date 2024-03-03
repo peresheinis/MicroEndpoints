@@ -1,4 +1,4 @@
-[![publish to nuget](https://github.com/ShadyNagy/MicroEndpoints/actions/workflows/nugt-publish.yml/badge.svg)](https://github.com/peresheinis/MicroEndpoints/actions/workflows/nugt-publish.yml)
+[![publish to nuget](https://github.com/peresheinis/MicroEndpoints/actions/workflows/nugt-publish.yml/badge.svg)](https://github.com/peresheinis/MicroEndpoints/actions/workflows/nugt-publish.yml)
 [![MicroEndpoints on NuGet](https://img.shields.io/nuget/v/MicroEndpoints?label=MicroEndpoints)](https://www.nuget.org/packages/Lebedeff.MicroEndpoints/)
 [![NuGet](https://img.shields.io/nuget/dt/MicroEndpoints)](https://www.nuget.org/packages/Lebedeff.MicroEndpoints)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/peresheinis/MicroEndpoints/blob/main/LICENSE)
