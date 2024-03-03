@@ -7,9 +7,9 @@
 
 # MicroEndpoints
 
-MicroEndpoints is a .NET library that simplifies creating HTTP endpoints in a minimalistic and clean manner. It's designed to work with .NET 6's Minimal APIs. 
+MicroEndpoints is a .NET library that simplifies creating HTTP endpoints in a minimalistic and clean manner. It's designed to work with .NET 8's Minimal APIs. 
 
-Minimal APIs in .NET 6 offer an easy way to build HTTP APIs with the flexibility to add more features as your project grows. They are great for creating HTTP APIs where you typically send and receive HTTP requests and responses. These APIs are often used with single-page apps, mobile clients, and for public HTTP APIs.
+Minimal APIs in .NET 8 offer an easy way to build HTTP APIs with the flexibility to add more features as your project grows. They are great for creating HTTP APIs where you typically send and receive HTTP requests and responses. These APIs are often used with single-page apps, mobile clients, and for public HTTP APIs.
 
 Here are a few benefits of Minimal APIs:
 
