@@ -5,6 +5,257 @@ namespace MicroEndpoints.FluentGenerics;
 
 public static class EndpointBaseAsync
 {
+    public static class WithQuery<T1>
+    {
+        /// <summary>
+        /// Synchronous endpoint configuration with a request and a response.
+        /// </summary>
+        public abstract class WithResult<TResponse> : EndpointConfigurationSyncBase
+        {
+            /// <summary>
+            /// Handles the operation and returns a response.
+            /// </summary>
+            /// <param name="request">The request data.</param>
+            /// <returns>The response data.</returns>
+            public abstract TResponse Handle([FromServices] IServiceProvider serviceProvider,
+                T1 firstParameter, CancellationToken cancellationToken = default);
+        }
+
+        /// <summary>
+        /// Synchronous endpoint configuration with a request but without a response.
+        /// </summary>
+        public abstract class WithoutResult : EndpointConfigurationSyncBase
+        {
+            /// <summary>
+            /// Handles the operation.
+            /// </summary>
+            /// <param name="request">The request data.</param>
+            public abstract void Handle([FromServices] IServiceProvider serviceProvider,
+                T1 firstParameter, CancellationToken cancellationToken = default);
+        }
+
+        /// <summary>
+        /// Synchronous endpoint configuration with a request and an IResult response.
+        /// </summary>
+        public abstract class WithIResult : EndpointConfigurationSyncBase
+        {
+            /// <summary>
+            /// Handles the operation and returns an IResult response.
+            /// </summary>
+            /// <param name="request">The request data.</param>
+            /// <returns>The IResult response object.</returns>
+            public abstract IResult Handle([FromServices] IServiceProvider serviceProvider,
+                T1 firstParameter, CancellationToken cancellationToken = default);
+        }
+    }
+
+    public static class WithQuery<T1, T2>
+    {
+        /// <summary>
+        /// Synchronous endpoint configuration with a request and a response.
+        /// </summary>
+        public abstract class WithResult<TResponse> : EndpointConfigurationSyncBase
+        {
+            /// <summary>
+            /// Handles the operation and returns a response.
+            /// </summary>
+            /// <param name="request">The request data.</param>
+            /// <returns>The response data.</returns>
+            public abstract TResponse Handle([FromServices] IServiceProvider serviceProvider,
+                T1 firstParameter,
+                T2 secondParameter, CancellationToken cancellationToken = default);
+        }
+
+        /// <summary>
+        /// Synchronous endpoint configuration with a request but without a response.
+        /// </summary>
+        public abstract class WithoutResult : EndpointConfigurationSyncBase
+        {
+            /// <summary>
+            /// Handles the operation.
+            /// </summary>
+            /// <param name="request">The request data.</param>
+            public abstract void Handle([FromServices] IServiceProvider serviceProvider,
+                T1 firstParameter,
+                T2 secondParameter, CancellationToken cancellationToken = default);
+        }
+
+        /// <summary>
+        /// Synchronous endpoint configuration with a request and an IResult response.
+        /// </summary>
+        public abstract class WithIResult : EndpointConfigurationSyncBase
+        {
+            /// <summary>
+            /// Handles the operation and returns an IResult response.
+            /// </summary>
+            /// <param name="request">The request data.</param>
+            /// <returns>The IResult response object.</returns>
+            public abstract IResult Handle([FromServices] IServiceProvider serviceProvider,
+                T1 firstParameter,
+                T2 secondParameter, CancellationToken cancellationToken = default);
+        }
+    }
+
+    public static class WithQuery<T1, T2, T3>
+    {
+        /// <summary>
+        /// Synchronous endpoint configuration with a request and a response.
+        /// </summary>
+        public abstract class WithResult<TResponse> : EndpointConfigurationSyncBase
+        {
+            /// <summary>
+            /// Handles the operation and returns a response.
+            /// </summary>
+            /// <param name="request">The request data.</param>
+            /// <returns>The response data.</returns>
+            public abstract TResponse Handle([FromServices] IServiceProvider serviceProvider,
+                T1 firstParameter,
+                T2 secondParameter,
+                T3 thirdParameter, CancellationToken cancellationToken = default);
+        }
+
+        /// <summary>
+        /// Synchronous endpoint configuration with a request but without a response.
+        /// </summary>
+        public abstract class WithoutResult : EndpointConfigurationSyncBase
+        {
+            /// <summary>
+            /// Handles the operation.
+            /// </summary>
+            /// <param name="request">The request data.</param>
+            public abstract void Handle([FromServices] IServiceProvider serviceProvider,
+                T1 firstParameter,
+                T2 secondParameter,
+                T3 thirdParameter, CancellationToken cancellationToken = default);
+        }
+
+        /// <summary>
+        /// Synchronous endpoint configuration with a request and an IResult response.
+        /// </summary>
+        public abstract class WithIResult : EndpointConfigurationSyncBase
+        {
+            /// <summary>
+            /// Handles the operation and returns an IResult response.
+            /// </summary>
+            /// <param name="request">The request data.</param>
+            /// <returns>The IResult response object.</returns>
+            public abstract IResult Handle([FromServices] IServiceProvider serviceProvider,
+                T1 firstParameter,
+                T2 secondParameter,
+                T3 thirdParameter, CancellationToken cancellationToken = default);
+        }
+    }
+
+    public static class WithQuery<T1, T2, T3, T4>
+    {
+        /// <summary>
+        /// Synchronous endpoint configuration with a request and a response.
+        /// </summary>
+        public abstract class WithResult<TResponse> : EndpointConfigurationSyncBase
+        {
+            /// <summary>
+            /// Handles the operation and returns a response.
+            /// </summary>
+            /// <param name="request">The request data.</param>
+            /// <returns>The response data.</returns>
+            public abstract TResponse Handle([FromServices] IServiceProvider serviceProvider,
+                T1 firstParameter,
+                T2 secondParameter,
+                T3 thirdParameter,
+                T4 fourthParameter, CancellationToken cancellationToken = default);
+        }
+
+        /// <summary>
+        /// Synchronous endpoint configuration with a request but without a response.
+        /// </summary>
+        public abstract class WithoutResult : EndpointConfigurationSyncBase
+        {
+            /// <summary>
+            /// Handles the operation.
+            /// </summary>
+            /// <param name="request">The request data.</param>
+            public abstract void Handle([FromServices] IServiceProvider serviceProvider,
+                T1 firstParameter,
+                T2 secondParameter,
+                T3 thirdParameter,
+                T4 fourthParameter, CancellationToken cancellationToken = default);
+        }
+
+        /// <summary>
+        /// Synchronous endpoint configuration with a request and an IResult response.
+        /// </summary>
+        public abstract class WithIResult : EndpointConfigurationSyncBase
+        {
+            /// <summary>
+            /// Handles the operation and returns an IResult response.
+            /// </summary>
+            /// <param name="request">The request data.</param>
+            /// <returns>The IResult response object.</returns>
+            public abstract IResult Handle([FromServices] IServiceProvider serviceProvider,
+                T1 firstParameter,
+                T2 secondParameter,
+                T3 thirdParameter,
+                T4 fourthParameter, CancellationToken cancellationToken = default);
+        }
+    }
+
+    public static class WithQuery<T1, T2, T3, T4, T5>
+    {
+        /// <summary>
+        /// Synchronous endpoint configuration with a request and a response.
+        /// </summary>
+        public abstract class WithResult<TResponse> : EndpointConfigurationSyncBase
+        {
+            /// <summary>
+            /// Handles the operation and returns a response.
+            /// </summary>
+            /// <param name="request">The request data.</param>
+            /// <returns>The response data.</returns>
+            public abstract TResponse Handle(
+                [FromServices] IServiceProvider serviceProvider,
+                T1 firstParameter, 
+                T2 secondParameter, 
+                T3 thirdParameter, 
+                T4 fourthParameter,
+                T5 fifthParameter, CancellationToken cancellationToken = default);
+        }
+
+        /// <summary>
+        /// Synchronous endpoint configuration with a request but without a response.
+        /// </summary>
+        public abstract class WithoutResult : EndpointConfigurationSyncBase
+        {
+            /// <summary>
+            /// Handles the operation.
+            /// </summary>
+            /// <param name="request">The request data.</param>
+            public abstract void Handle([FromServices] IServiceProvider serviceProvider,
+                T1 firstParameter,
+                T2 secondParameter,
+                T3 thirdParameter,
+                T4 fourthParameter,
+                T5 fifthParameter, CancellationToken cancellationToken = default);
+        }
+
+        /// <summary>
+        /// Synchronous endpoint configuration with a request and an IResult response.
+        /// </summary>
+        public abstract class WithIResult : EndpointConfigurationSyncBase
+        {
+            /// <summary>
+            /// Handles the operation and returns an IResult response.
+            /// </summary>
+            /// <param name="request">The request data.</param>
+            /// <returns>The IResult response object.</returns>
+            public abstract IResult Handle([FromServices] IServiceProvider serviceProvider,
+                T1 firstParameter,
+                T2 secondParameter,
+                T3 thirdParameter,
+                T4 fourthParameter,
+                T5 fifthParameter, CancellationToken cancellationToken = default);
+        }
+    }
+
     public static class WithRequest<TRequest>
     {
         /// <summary>
