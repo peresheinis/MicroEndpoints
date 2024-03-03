@@ -4,6 +4,8 @@
 		<TargetFrameworks>net8.0;</TargetFrameworks>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
+		<Version>2.0.2</Version>
+		<PackageVersion>2.0.2</PackageVersion>
 		<NuspecFile>../../MicroEndpoints.nuspec</NuspecFile>
 		<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
 		<Title>MicroEndpoints</Title>
