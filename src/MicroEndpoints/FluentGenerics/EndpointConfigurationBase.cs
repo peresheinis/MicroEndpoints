@@ -1,11 +1,10 @@
-﻿using System;
-using System.Linq.Expressions;
-using System.Reflection;
-using MicroEndpoints.Interfaces;
+﻿using MicroEndpoints.Interfaces;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq.Expressions;
+using System.Reflection;
 
 namespace MicroEndpoints.FluentGenerics;
 
