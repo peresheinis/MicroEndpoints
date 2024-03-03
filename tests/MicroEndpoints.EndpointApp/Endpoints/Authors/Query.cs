@@ -19,7 +19,7 @@ public class Query : EndpointBaseAsync
         _mapper = mapper;
     }
 
-    [Get("api/authors")]
+    [Get("api/authors/query")]
     public override IResult Handle(
         [FromServices] IServiceProvider serviceProvider, 
         int page,
