@@ -2,8 +2,6 @@
 [![MicroEndpoints on NuGet](https://img.shields.io/nuget/v/Lebedeff.MicroEndpoints?label=Lebedeff.MicroEndpoints)](https://www.nuget.org/packages/Lebedeff.MicroEndpoints/)
 [![NuGet](https://img.shields.io/nuget/dt/Lebedeff.MicroEndpoints)](https://www.nuget.org/packages/Lebedeff.MicroEndpoints)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/peresheinis/MicroEndpoints/blob/main/LICENSE)
-[![paypal](https://img.shields.io/badge/PayPal-tip%20me-green.svg?logo=paypal)](https://www.paypal.me/shadynagy)
-
 
 # MicroEndpoints
 
