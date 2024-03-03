@@ -10,26 +10,26 @@ public class Create : EndpointBaseAsync
     .WithRequest<CreateAuthorCommand>
     .WithIResult
 {
-  private IAsyncRepository<Author> _repository;
-  private IMapper _mapper;
+    private IAsyncRepository<Author> _repository;
+    private IMapper _mapper;
 
-  public Create(IAsyncRepository<Author> repository, IMapper mapper)
-  {
-    _repository = repository;
-    _mapper = mapper;
-  }
+    public Create(IAsyncRepository<Author> repository, IMapper mapper)
+    {
+        _repository = repository;
+        _mapper = mapper;
+    }
 
-  [Post("api/authors")]
-  public override async Task<IResult> HandleAsync([FromServices] IServiceProvider serviceProvider, [FromBody] CreateAuthorCommand request, CancellationToken cancellationToken = default)
-  {
-	  _repository = serviceProvider.GetService<IAsyncRepository<Author>>()!;
-	  _mapper = serviceProvider.GetService<IMapper>()!;
+    [Post("api/authors")]
+    public override async Task<IResult> HandleAsync([FromServices] IServiceProvider serviceProvider, [FromBody] CreateAuthorCommand request, CancellationToken cancellationToken = default)
+    {
+        _repository = serviceProvider.GetService<IAsyncRepository<Author>>()!;
+        _mapper = serviceProvider.GetService<IMapper>()!;
 
-		var author = new Author();
-    _mapper.Map(request, author);
-    await _repository.AddAsync(author, cancellationToken);
+        var author = new Author();
+        _mapper.Map(request, author);
+        await _repository.AddAsync(author, cancellationToken);
 
-    var result = _mapper.Map<CreateAuthorResult>(author);
-    return CreatedAtRoute("authors_get", new { id = result.Id }, result);
-  }
+        var result = _mapper.Map<CreateAuthorResult>(author);
+        return CreatedAtRoute("authors_get", new { id = result.Id }, result);
+    }
 }

@@ -9,9 +9,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{E3CB87D2
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroEndpoints", "src\MicroEndpoints\MicroEndpoints.csproj", "{70BB0910-3B71-4817-A3ED-DD9F0A63B4A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroEndpoints.FunctionalTests", "tests\MicroEndpoints.FunctionalTests\MicroEndpoints.FunctionalTests.csproj", "{CF4764DB-83D0-49D5-B9ED-AF1EFD868D82}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroEndpoints.FunctionalTests", "tests\MicroEndpoints.FunctionalTests\MicroEndpoints.FunctionalTests.csproj", "{CF4764DB-83D0-49D5-B9ED-AF1EFD868D82}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroEndpoints.EndpointApp", "tests\MicroEndpoints.EndpointApp\MicroEndpoints.EndpointApp.csproj", "{9400B7D7-F535-4024-9700-A068AF70F524}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroEndpoints.EndpointApp", "tests\MicroEndpoints.EndpointApp\MicroEndpoints.EndpointApp.csproj", "{9400B7D7-F535-4024-9700-A068AF70F524}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

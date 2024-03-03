@@ -1,19 +1,40 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFrameworks>net8.0</TargetFrameworks>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-    <NuspecFile>../../MicroEndpoints.nuspec</NuspecFile>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFrameworks>net8.0;</TargetFrameworks>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<NuspecFile>../../MicroEndpoints.nuspec</NuspecFile>
+		<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+		<Title>MicroEndpoints</Title>
+		<Description>
+			MicroEndpoints is a .NET library that simplifies creating HTTP endpoints in a minimalistic and clean manner. It's designed to work with .NET 8's Minimal APIs.
 
-  <ItemGroup>
-    <None Include="../../icon.png" Pack="true" Visible="false" PackagePath="" />
-  </ItemGroup>
+			Minimal APIs in .NET 8 offer an easy way to build HTTP APIs with the flexibility to add more features as your project grows. They are great for creating HTTP APIs where you typically send and receive HTTP requests and responses. These APIs are often used with single-page apps, mobile clients, and for public HTTP APIs.
+		</Description>
+		<PackageProjectUrl>https://github.com/peresheinis/MicroEndpoints</PackageProjectUrl>
+		<PackageIcon>icon.png</PackageIcon>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<RepositoryUrl>https://github.com/peresheinis/MicroEndpoints</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageTags>micro endpoints, microendpoints, endpoints, minimal api, api, minimal, minimalapi, cqrs, mediatr, webapi, web, microservices, micro services</PackageTags>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+		<IncludeSymbols>False</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+		<TargetFramework>net8.0</TargetFramework>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <FrameworkReference Include="Microsoft.AspNetCore.App" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
-  </ItemGroup>
+	<ItemGroup>
+		<None Include="../../icon.png" Pack="true" Visible="false" PackagePath="\" />
+		<None Include="..\..\README.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+		<FrameworkReference Include="Microsoft.AspNetCore.App" />
+	</ItemGroup>
 
 </Project>
