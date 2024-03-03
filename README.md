@@ -1,15 +1,13 @@
-[![publish to nuget](https://github.com/ShadyNagy/MicroEndpoints/actions/workflows/nugt-publish.yml/badge.svg)](https://github.com/ShadyNagy/MicroEndpoints/actions/workflows/nugt-publish.yml)
-[![MicroEndpoints on NuGet](https://img.shields.io/nuget/v/MicroEndpoints?label=MicroEndpoints)](https://www.nuget.org/packages/MicroEndpoints/)
-[![NuGet](https://img.shields.io/nuget/dt/MicroEndpoints)](https://www.nuget.org/packages/MicroEndpoints)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/ShadyNagy/MicroEndpoints/blob/main/LICENSE)
-[![paypal](https://img.shields.io/badge/PayPal-tip%20me-green.svg?logo=paypal)](https://www.paypal.me/shadynagy)
-
+[![publish to nuget](https://github.com/peresheinis/MicroEndpoints/actions/workflows/nugt-publish.yml/badge.svg)](https://github.com/peresheinis/MicroEndpoints/actions/workflows/nugt-publish.yml)
+[![MicroEndpoints on NuGet](https://img.shields.io/nuget/v/Lebedeff.MicroEndpoints?label=Lebedeff.MicroEndpoints)](https://www.nuget.org/packages/Lebedeff.MicroEndpoints/)
+[![NuGet](https://img.shields.io/nuget/dt/Lebedeff.MicroEndpoints)](https://www.nuget.org/packages/Lebedeff.MicroEndpoints)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/peresheinis/MicroEndpoints/blob/main/LICENSE)
 
 # MicroEndpoints
 
-MicroEndpoints is a .NET library that simplifies creating HTTP endpoints in a minimalistic and clean manner. It's designed to work with .NET 6's Minimal APIs. 
+MicroEndpoints is a .NET library that simplifies creating HTTP endpoints in a minimalistic and clean manner. It's designed to work with .NET 8's Minimal APIs. 
 
-Minimal APIs in .NET 6 offer an easy way to build HTTP APIs with the flexibility to add more features as your project grows. They are great for creating HTTP APIs where you typically send and receive HTTP requests and responses. These APIs are often used with single-page apps, mobile clients, and for public HTTP APIs.
+Minimal APIs in .NET 8 offer an easy way to build HTTP APIs with the flexibility to add more features as your project grows. They are great for creating HTTP APIs where you typically send and receive HTTP requests and responses. These APIs are often used with single-page apps, mobile clients, and for public HTTP APIs.
 
 Here are a few benefits of Minimal APIs:
 
@@ -17,7 +15,7 @@ Here are a few benefits of Minimal APIs:
 - Productivity: Minimal APIs require less code and less ceremony, which leads to a productivity gain.
 - Performance: Minimal APIs are built on top of the same high-performance components as the rest of ASP.NET Core.
 
-For more detailed information, please refer to the [Microsoft Documentation on Minimal APIs](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis?view=aspnetcore-6.0).
+For more detailed information, please refer to the [Microsoft Documentation on Minimal APIs](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis?view=aspnetcore-8.0).
 
 With MicroEndpoints, you can leverage the simplicity and performance of Minimal APIs with a structured and easy-to-use model, making your development process even more efficient.
 
@@ -27,7 +25,7 @@ With MicroEndpoints, you can leverage the simplicity and performance of Minimal 
 To install the library, you can use the .NET CLI:
 
 ```shell
-dotnet add package MicroEndpoints
+dotnet add package Lebedeff.MicroEndpoints
 ```
 
 After installing the package, make sure to include the following line in your `Program.cs`:
@@ -249,7 +247,7 @@ public class Delete : EndpointBaseAsync
 }
 ```
 
-You can see more examples in the [examples](https://github.com/ShadyNagy/MicroEndpoints/tree/main/tests/MicroEndpoints.EndpointApp) directory.
+You can see more examples in the [examples](https://github.com/peresheinis/MicroEndpoints/tree/main/tests/MicroEndpoints.EndpointApp) directory.
 
 # Acknowledgements
 
@@ -265,3 +263,7 @@ We welcome contributions! Please see [CONTRIBUTING.md](./CONTRIBUTING.md) for de
 ## License
 
 This project is licensed under the terms of the MIT license. See the [LICENSE](./LICENSE) file.
+
+## Author
+
+https://github.com/ShadyNagy
