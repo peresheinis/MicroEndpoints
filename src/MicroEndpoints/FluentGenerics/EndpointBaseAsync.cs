@@ -17,7 +17,7 @@ public static class EndpointBaseAsync
             /// </summary>
             /// <param name="request">The request data.</param>
             /// <returns>The response data.</returns>
-            public abstract TResponse Handle([FromServices] IServiceProvider serviceProvider,
+            public abstract Task<TResponse> Handle([FromServices] IServiceProvider serviceProvider,
                 T1 firstParameter, CancellationToken cancellationToken = default);
         }
 
@@ -30,7 +30,7 @@ public static class EndpointBaseAsync
             /// Handles the operation.
             /// </summary>
             /// <param name="request">The request data.</param>
-            public abstract void Handle([FromServices] IServiceProvider serviceProvider,
+            public abstract Task Handle([FromServices] IServiceProvider serviceProvider,
                 T1 firstParameter, CancellationToken cancellationToken = default);
         }
 
@@ -44,7 +44,7 @@ public static class EndpointBaseAsync
             /// </summary>
             /// <param name="request">The request data.</param>
             /// <returns>The IResult response object.</returns>
-            public abstract IResult Handle([FromServices] IServiceProvider serviceProvider,
+            public abstract Task<IResult> Handle([FromServices] IServiceProvider serviceProvider,
                 T1 firstParameter, CancellationToken cancellationToken = default);
         }
     }
@@ -61,7 +61,7 @@ public static class EndpointBaseAsync
             /// </summary>
             /// <param name="request">The request data.</param>
             /// <returns>The response data.</returns>
-            public abstract TResponse Handle([FromServices] IServiceProvider serviceProvider,
+            public abstract Task<TResponse> Handle([FromServices] IServiceProvider serviceProvider,
                 T1 firstParameter,
                 T2 secondParameter, CancellationToken cancellationToken = default);
         }
@@ -75,7 +75,7 @@ public static class EndpointBaseAsync
             /// Handles the operation.
             /// </summary>
             /// <param name="request">The request data.</param>
-            public abstract void Handle([FromServices] IServiceProvider serviceProvider,
+            public abstract Task Handle([FromServices] IServiceProvider serviceProvider,
                 T1 firstParameter,
                 T2 secondParameter, CancellationToken cancellationToken = default);
         }
@@ -90,7 +90,7 @@ public static class EndpointBaseAsync
             /// </summary>
             /// <param name="request">The request data.</param>
             /// <returns>The IResult response object.</returns>
-            public abstract IResult Handle([FromServices] IServiceProvider serviceProvider,
+            public abstract Task<IResult> Handle([FromServices] IServiceProvider serviceProvider,
                 T1 firstParameter,
                 T2 secondParameter, CancellationToken cancellationToken = default);
         }
@@ -108,7 +108,7 @@ public static class EndpointBaseAsync
             /// </summary>
             /// <param name="request">The request data.</param>
             /// <returns>The response data.</returns>
-            public abstract TResponse Handle([FromServices] IServiceProvider serviceProvider,
+            public abstract Task<TResponse> Handle([FromServices] IServiceProvider serviceProvider,
                 T1 firstParameter,
                 T2 secondParameter,
                 T3 thirdParameter, CancellationToken cancellationToken = default);
@@ -139,7 +139,7 @@ public static class EndpointBaseAsync
             /// </summary>
             /// <param name="request">The request data.</param>
             /// <returns>The IResult response object.</returns>
-            public abstract IResult Handle([FromServices] IServiceProvider serviceProvider,
+            public abstract Task<IResult> Handle([FromServices] IServiceProvider serviceProvider,
                 T1 firstParameter,
                 T2 secondParameter,
                 T3 thirdParameter, CancellationToken cancellationToken = default);
@@ -158,7 +158,7 @@ public static class EndpointBaseAsync
             /// </summary>
             /// <param name="request">The request data.</param>
             /// <returns>The response data.</returns>
-            public abstract TResponse Handle([FromServices] IServiceProvider serviceProvider,
+            public abstract Task<TResponse> Handle([FromServices] IServiceProvider serviceProvider,
                 T1 firstParameter,
                 T2 secondParameter,
                 T3 thirdParameter,
@@ -191,7 +191,7 @@ public static class EndpointBaseAsync
             /// </summary>
             /// <param name="request">The request data.</param>
             /// <returns>The IResult response object.</returns>
-            public abstract IResult Handle([FromServices] IServiceProvider serviceProvider,
+            public abstract Task<IResult> Handle([FromServices] IServiceProvider serviceProvider,
                 T1 firstParameter,
                 T2 secondParameter,
                 T3 thirdParameter,
@@ -211,11 +211,11 @@ public static class EndpointBaseAsync
             /// </summary>
             /// <param name="request">The request data.</param>
             /// <returns>The response data.</returns>
-            public abstract TResponse Handle(
+            public abstract Task<TResponse> Handle(
                 [FromServices] IServiceProvider serviceProvider,
-                T1 firstParameter, 
-                T2 secondParameter, 
-                T3 thirdParameter, 
+                T1 firstParameter,
+                T2 secondParameter,
+                T3 thirdParameter,
                 T4 fourthParameter,
                 T5 fifthParameter, CancellationToken cancellationToken = default);
         }
@@ -247,7 +247,7 @@ public static class EndpointBaseAsync
             /// </summary>
             /// <param name="request">The request data.</param>
             /// <returns>The IResult response object.</returns>
-            public abstract IResult Handle([FromServices] IServiceProvider serviceProvider,
+            public abstract Task<IResult> Handle([FromServices] IServiceProvider serviceProvider,
                 T1 firstParameter,
                 T2 secondParameter,
                 T3 thirdParameter,
