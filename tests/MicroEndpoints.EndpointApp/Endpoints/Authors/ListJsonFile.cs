@@ -10,24 +10,22 @@ public class ListJsonFile : EndpointBaseAsync
     .WithoutRequest
     .WithIResult
 {
-  private IAsyncRepository<Author> _repository;
+    private IAsyncRepository<Author> _repository;
 
-  public ListJsonFile(IAsyncRepository<Author> repository)
-  {
-    _repository = repository;
-  }
+    public ListJsonFile(IAsyncRepository<Author> repository)
+    {
+        _repository = repository;
+    }
 
-  /// <summary>
-  /// List all Authors as a JSON file
-  /// </summary>
-  [Get("api/authors/Json")]
-  public override async Task<IResult> HandleAsync([FromServices] IServiceProvider serviceProvider, CancellationToken cancellationToken = default)
-  {
-	  _repository = serviceProvider.GetService<IAsyncRepository<Author>>()!;
+    /// <summary>
+    /// List all Authors as a JSON file
+    /// </summary>
+    [Get("api/authors/Json")]
+    public override async Task<IResult> HandleAsync(CancellationToken cancellationToken = default)
+    {
+        var result = (await _repository.ListAllAsync(cancellationToken)).ToList();
 
-	  var result = (await _repository.ListAllAsync(cancellationToken)).ToList();
-
-    var streamData = JsonSerializer.SerializeToUtf8Bytes(result);
-    return File(streamData, "text/json", "authors.json");
-  }
+        var streamData = JsonSerializer.SerializeToUtf8Bytes(result);
+        return File(streamData, "text/json", "authors.json");
+    }
 }

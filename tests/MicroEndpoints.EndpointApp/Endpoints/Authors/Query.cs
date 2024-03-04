@@ -20,8 +20,7 @@ public class Query : EndpointBaseAsync
     }
 
     [Get("api/authors/query")]
-    public override IResult Handle(
-        [FromServices] IServiceProvider serviceProvider, 
+    public override Task<IResult> Handle(
         int page,
         int pageSize, CancellationToken cancellationToken = default)
     {

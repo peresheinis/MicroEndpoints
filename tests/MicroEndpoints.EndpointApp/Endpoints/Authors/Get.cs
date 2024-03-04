@@ -10,30 +10,27 @@ public class Get : EndpointBaseAsync
       .WithRequest<int>
       .WithIResult
 {
-  private IAsyncRepository<Author> _repository;
-  private IMapper _mapper;
+    private IAsyncRepository<Author> _repository;
+    private IMapper _mapper;
 
-  public Get(IAsyncRepository<Author> repository, IMapper mapper)
-  {
-	  _repository = repository;
-	  _mapper = mapper;
-  }
+    public Get(IAsyncRepository<Author> repository, IMapper mapper)
+    {
+        _repository = repository;
+        _mapper = mapper;
+    }
 
-  /// <summary>
-  /// Get a specific Author
-  /// </summary>
-  [Get("api/authors/{id}")]
-  public override async Task<IResult> HandleAsync([FromServices] IServiceProvider serviceProvider, int id, CancellationToken cancellationToken = default)
-  {
-	  _repository = serviceProvider.GetService<IAsyncRepository<Author>>()!;
-	  _mapper = serviceProvider.GetService<IMapper>()!;
+    /// <summary>
+    /// Get a specific Author
+    /// </summary>
+    [Get("api/authors/{id}")]
+    public override async Task<IResult> HandleAsync(int id, CancellationToken cancellationToken = default)
+    {
+        var author = await _repository.GetByIdAsync(id, cancellationToken);
 
-	  var author = await _repository.GetByIdAsync(id, cancellationToken);
+        if (author is null) return NotFound();
 
-	  if (author is null) return NotFound();
+        var result = _mapper.Map<AuthorResult>(author);
 
-	  var result = _mapper.Map<AuthorResult>(author);
-
-	  return Ok(result);
-  }
+        return Ok(result);
+    }
 }

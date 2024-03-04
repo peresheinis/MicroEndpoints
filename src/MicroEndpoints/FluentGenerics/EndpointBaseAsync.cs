@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 
 namespace MicroEndpoints.FluentGenerics;
 
@@ -17,7 +16,7 @@ public static class EndpointBaseAsync
             /// </summary>
             /// <param name="request">The request data.</param>
             /// <returns>The response data.</returns>
-            public abstract Task<TResponse> Handle([FromServices] IServiceProvider serviceProvider,
+            public abstract Task<TResponse> Handle(
                 T1 firstParameter, CancellationToken cancellationToken = default);
         }
 
@@ -30,7 +29,7 @@ public static class EndpointBaseAsync
             /// Handles the operation.
             /// </summary>
             /// <param name="request">The request data.</param>
-            public abstract Task Handle([FromServices] IServiceProvider serviceProvider,
+            public abstract Task Handle(
                 T1 firstParameter, CancellationToken cancellationToken = default);
         }
 
@@ -44,7 +43,7 @@ public static class EndpointBaseAsync
             /// </summary>
             /// <param name="request">The request data.</param>
             /// <returns>The IResult response object.</returns>
-            public abstract Task<IResult> Handle([FromServices] IServiceProvider serviceProvider,
+            public abstract Task<IResult> Handle(
                 T1 firstParameter, CancellationToken cancellationToken = default);
         }
     }
@@ -61,7 +60,7 @@ public static class EndpointBaseAsync
             /// </summary>
             /// <param name="request">The request data.</param>
             /// <returns>The response data.</returns>
-            public abstract Task<TResponse> Handle([FromServices] IServiceProvider serviceProvider,
+            public abstract Task<TResponse> Handle(
                 T1 firstParameter,
                 T2 secondParameter, CancellationToken cancellationToken = default);
         }
@@ -75,7 +74,7 @@ public static class EndpointBaseAsync
             /// Handles the operation.
             /// </summary>
             /// <param name="request">The request data.</param>
-            public abstract Task Handle([FromServices] IServiceProvider serviceProvider,
+            public abstract Task Handle(
                 T1 firstParameter,
                 T2 secondParameter, CancellationToken cancellationToken = default);
         }
@@ -90,7 +89,7 @@ public static class EndpointBaseAsync
             /// </summary>
             /// <param name="request">The request data.</param>
             /// <returns>The IResult response object.</returns>
-            public abstract Task<IResult> Handle([FromServices] IServiceProvider serviceProvider,
+            public abstract Task<IResult> Handle(
                 T1 firstParameter,
                 T2 secondParameter, CancellationToken cancellationToken = default);
         }
@@ -108,7 +107,7 @@ public static class EndpointBaseAsync
             /// </summary>
             /// <param name="request">The request data.</param>
             /// <returns>The response data.</returns>
-            public abstract Task<TResponse> Handle([FromServices] IServiceProvider serviceProvider,
+            public abstract Task<TResponse> Handle(
                 T1 firstParameter,
                 T2 secondParameter,
                 T3 thirdParameter, CancellationToken cancellationToken = default);
@@ -123,7 +122,7 @@ public static class EndpointBaseAsync
             /// Handles the operation.
             /// </summary>
             /// <param name="request">The request data.</param>
-            public abstract void Handle([FromServices] IServiceProvider serviceProvider,
+            public abstract void Handle(
                 T1 firstParameter,
                 T2 secondParameter,
                 T3 thirdParameter, CancellationToken cancellationToken = default);
@@ -139,7 +138,7 @@ public static class EndpointBaseAsync
             /// </summary>
             /// <param name="request">The request data.</param>
             /// <returns>The IResult response object.</returns>
-            public abstract Task<IResult> Handle([FromServices] IServiceProvider serviceProvider,
+            public abstract Task<IResult> Handle(
                 T1 firstParameter,
                 T2 secondParameter,
                 T3 thirdParameter, CancellationToken cancellationToken = default);
@@ -158,7 +157,7 @@ public static class EndpointBaseAsync
             /// </summary>
             /// <param name="request">The request data.</param>
             /// <returns>The response data.</returns>
-            public abstract Task<TResponse> Handle([FromServices] IServiceProvider serviceProvider,
+            public abstract Task<TResponse> Handle(
                 T1 firstParameter,
                 T2 secondParameter,
                 T3 thirdParameter,
@@ -174,7 +173,7 @@ public static class EndpointBaseAsync
             /// Handles the operation.
             /// </summary>
             /// <param name="request">The request data.</param>
-            public abstract void Handle([FromServices] IServiceProvider serviceProvider,
+            public abstract void Handle(
                 T1 firstParameter,
                 T2 secondParameter,
                 T3 thirdParameter,
@@ -191,7 +190,7 @@ public static class EndpointBaseAsync
             /// </summary>
             /// <param name="request">The request data.</param>
             /// <returns>The IResult response object.</returns>
-            public abstract Task<IResult> Handle([FromServices] IServiceProvider serviceProvider,
+            public abstract Task<IResult> Handle(
                 T1 firstParameter,
                 T2 secondParameter,
                 T3 thirdParameter,
@@ -212,7 +211,7 @@ public static class EndpointBaseAsync
             /// <param name="request">The request data.</param>
             /// <returns>The response data.</returns>
             public abstract Task<TResponse> Handle(
-                [FromServices] IServiceProvider serviceProvider,
+
                 T1 firstParameter,
                 T2 secondParameter,
                 T3 thirdParameter,
@@ -229,7 +228,7 @@ public static class EndpointBaseAsync
             /// Handles the operation.
             /// </summary>
             /// <param name="request">The request data.</param>
-            public abstract void Handle([FromServices] IServiceProvider serviceProvider,
+            public abstract void Handle(
                 T1 firstParameter,
                 T2 secondParameter,
                 T3 thirdParameter,
@@ -247,7 +246,7 @@ public static class EndpointBaseAsync
             /// </summary>
             /// <param name="request">The request data.</param>
             /// <returns>The IResult response object.</returns>
-            public abstract Task<IResult> Handle([FromServices] IServiceProvider serviceProvider,
+            public abstract Task<IResult> Handle(
                 T1 firstParameter,
                 T2 secondParameter,
                 T3 thirdParameter,
@@ -271,10 +270,8 @@ public static class EndpointBaseAsync
             /// <param name="cancellationToken">A token that can be used to cancel the operation.</param>
             /// <returns>A task that represents the asynchronous operation. The task result contains the response object.</returns>
             public abstract Task<TResponse> HandleAsync(
-          [FromServices] IServiceProvider serviceProvider,
-          TRequest request,
-        CancellationToken cancellationToken = default
-      );
+                TRequest request, 
+                CancellationToken cancellationToken = default);
         }
         /// <summary>
         /// Asynchronous endpoint configuration with a specified request type but no response.
@@ -289,10 +286,7 @@ public static class EndpointBaseAsync
             /// <param name="cancellationToken">A token that can be used to cancel the operation.</param>
             /// <returns>A task that represents the asynchronous operation.</returns>
             public abstract Task HandleAsync(
-          [FromServices] IServiceProvider serviceProvider,
-                TRequest request,
-        CancellationToken cancellationToken = default
-      );
+                TRequest request, CancellationToken cancellationToken = default);
         }
 
         /// <summary>
@@ -308,10 +302,7 @@ public static class EndpointBaseAsync
             /// <param name="cancellationToken">A token that can be used to cancel the operation.</param>
             /// <returns>A task that represents the asynchronous operation. The task result contains the IResult response object.</returns>
             public abstract Task<IResult> HandleAsync(
-          [FromServices] IServiceProvider serviceProvider,
-                TRequest request,
-        CancellationToken cancellationToken = default
-      );
+                TRequest request, CancellationToken cancellationToken = default);
         }
         /// <summary>
         /// Asynchronous endpoint configuration with a specified request type and async enumerable response.
@@ -326,10 +317,7 @@ public static class EndpointBaseAsync
             /// <param name="cancellationToken">A token that can be used to cancel the operation.</param>
             /// <returns>An async enumerable that contains the response objects.</returns>
             public abstract IAsyncEnumerable<T> HandleAsync(
-          [FromServices] IServiceProvider serviceProvider,
-                TRequest request,
-        CancellationToken cancellationToken = default
-      );
+                TRequest request, CancellationToken cancellationToken = default);
         }
     }
 
@@ -347,7 +335,6 @@ public static class EndpointBaseAsync
             /// <param name="cancellationToken">A token that can be used to cancel the operation.</param>
             /// <returns>A task that represents the asynchronous operation. The task result contains the response object.</returns>
             public abstract Task<TResponse> HandleAsync(
-          [FromServices] IServiceProvider serviceProvider,
                 CancellationToken cancellationToken = default
       );
         }
@@ -364,7 +351,6 @@ public static class EndpointBaseAsync
             /// <param name="cancellationToken">A token that can be used to cancel the operation.</param>
             /// <returns>A task that represents the asynchronous operation.</returns>
             public abstract Task HandleAsync(
-          [FromServices] IServiceProvider serviceProvider,
                 CancellationToken cancellationToken = default
       );
         }
@@ -381,7 +367,6 @@ public static class EndpointBaseAsync
             /// <param name="cancellationToken">A token that can be used to cancel the operation.</param>
             /// <returns>A task that represents the asynchronous operation. The task result contains the IResult response object.</returns>
             public abstract Task<IResult> HandleAsync(
-          [FromServices] IServiceProvider serviceProvider,
                 CancellationToken cancellationToken = default
       );
         }
@@ -398,7 +383,6 @@ public static class EndpointBaseAsync
             /// <param name="cancellationToken">A token that can be used to cancel the operation.</param>
             /// <returns>An async enumerable that contains the response objects.</returns>
             public abstract IAsyncEnumerable<T> HandleAsync(
-          [FromServices] IServiceProvider serviceProvider,
                 CancellationToken cancellationToken = default
       );
         }

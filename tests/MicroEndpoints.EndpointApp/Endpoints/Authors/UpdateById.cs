@@ -10,34 +10,31 @@ public class UpdateById : EndpointBaseAsync
     .WithRequest<UpdateAuthorCommandById>
     .WithIResult
 {
-  private IAsyncRepository<Author> _repository;
-  private IMapper _mapper;
+    private IAsyncRepository<Author> _repository;
+    private IMapper _mapper;
 
-  public UpdateById(IAsyncRepository<Author> repository, IMapper mapper)
-  {
-    _repository = repository;
-    _mapper = mapper;
-  }
+    public UpdateById(IAsyncRepository<Author> repository, IMapper mapper)
+    {
+        _repository = repository;
+        _mapper = mapper;
+    }
 
-  /// <summary>
-  /// Updates an existing Author
-  /// </summary>
-  [Put("api/authors/{id}")]
-  public override async Task<IResult> HandleAsync([FromServices] IServiceProvider serviceProvider, [FromMultiSource]UpdateAuthorCommandById request, CancellationToken cancellationToken = default)
-  {
-	  _repository = serviceProvider.GetService<IAsyncRepository<Author>>()!;
-	  _mapper = serviceProvider.GetService<IMapper>()!;
+    /// <summary>
+    /// Updates an existing Author
+    /// </summary>
+    [Put("api/authors/{id}")]
+    public override async Task<IResult> HandleAsync([FromMultiSource] UpdateAuthorCommandById request, CancellationToken cancellationToken = default)
+    {
+        var author = await _repository.GetByIdAsync(request.Id, cancellationToken);
 
-		var author = await _repository.GetByIdAsync(request.Id, cancellationToken);
+        if (author is null) return NotFound();
 
-    if (author is null) return NotFound();
+        author.Name = request.Details.Name;
+        author.TwitterAlias = request.Details.TwitterAlias;
 
-    author.Name = request.Details.Name;
-    author.TwitterAlias = request.Details.TwitterAlias;
+        await _repository.UpdateAsync(author, cancellationToken);
 
-    await _repository.UpdateAsync(author, cancellationToken);
-
-    var result = _mapper.Map<UpdatedAuthorByIdResult>(author);
-    return Ok(result);
-  }
+        var result = _mapper.Map<UpdatedAuthorByIdResult>(author);
+        return Ok(result);
+    }
 }
