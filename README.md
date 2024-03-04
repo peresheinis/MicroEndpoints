@@ -119,7 +119,7 @@ If you need to use services from the dependency injection (DI) container in your
 You can use the `GetService` method from the `IServiceProvider` to retrieve your services. Here's an example:
 
 ```csharp
-public override async Task<IResult> HandleAsync([FromServices] IServiceProvider serviceProvider, MyRequest request, CancellationToken cancellationToken = default)
+public override async Task<IResult> HandleAsync(MyRequest request, CancellationToken cancellationToken = default)
 {
   // Get services from the DI container
   _repository = serviceProvider.GetService<IAsyncRepository<Author>>()!;
@@ -168,7 +168,7 @@ public class Get : EndpointBaseAsync
   }
 
   [Get("api/authors/{id}")]
-  public override async Task<IResult> HandleAsync([FromServices] IServiceProvider serviceProvider, int id, CancellationToken cancellationToken = default)
+  public override async Task<IResult> HandleAsync(int id, CancellationToken cancellationToken = default)
   {
     // Implementation...
   }
@@ -192,7 +192,7 @@ public class Create : EndpointBaseAsync
   }
 
   [Post("api/authors")]
-  public override async Task<IResult> HandleAsync([FromServices] IServiceProvider serviceProvider, [FromBody] CreateAuthorCommand request, CancellationToken cancellationToken = default)
+  public override async Task<IResult> HandleAsync([FromBody] CreateAuthorCommand request, CancellationToken cancellationToken = default)
   {
     // Implementation...
   }
@@ -216,7 +216,7 @@ public class Create : EndpointBaseAsync
   }
 
   [Put("api/authors")]
-  public override async Task<IResult> HandleAsync([FromServices] IServiceProvider serviceProvider, [FromBody] CreateAuthorCommand request, CancellationToken cancellationToken = default)
+  public override async Task<IResult> HandleAsync([FromBody] CreateAuthorCommand request, CancellationToken cancellationToken = default)
   {
     // Implementation...
   }
@@ -238,7 +238,7 @@ public class Delete : EndpointBaseAsync
   }
 
   [Delete("api/authors/{id:int}")]
-  public override async Task<IResult> HandleAsync([FromServices] IServiceProvider serviceProvider, [FromRoute] int id, CancellationToken cancellationToken = default)
+  public override async Task<IResult> HandleAsync([FromRoute] int id, CancellationToken cancellationToken = default)
   {
     // Implementation...
   }
