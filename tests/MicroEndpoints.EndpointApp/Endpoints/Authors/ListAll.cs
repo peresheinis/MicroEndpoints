@@ -2,6 +2,7 @@
 using MicroEndpoints.Attributes;
 using MicroEndpoints.EndpointApp.DomainModel;
 using MicroEndpoints.FluentGenerics;
+using Microsoft.AspNetCore.Mvc;
 
 namespace MicroEndpoints.EndpointApp.Endpoints.Authors;
 
@@ -22,7 +23,8 @@ public class ListAll : EndpointBaseAsync
     /// List all Authors
     /// </summary>
     [Get("api/authors")]
-    public override async Task<IEnumerable<AuthorListResult>> HandleAsync(CancellationToken cancellationToken = default)
+    public override async Task<IEnumerable<AuthorListResult>> HandleAsync(
+        [FromServices] IServiceProvider serviceProvider, CancellationToken cancellationToken = default)
     {
         var result = (await _repository.ListAllAsync(cancellationToken))
             .Select(i => _mapper.Map<AuthorListResult>(i));

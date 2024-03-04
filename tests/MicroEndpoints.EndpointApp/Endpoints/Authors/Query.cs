@@ -1,14 +1,14 @@
 ﻿using AutoMapper;
 using MicroEndpoints.Attributes;
+using MicroEndpoints.EndpointApp.DomainModel;
 using MicroEndpoints.FluentGenerics;
 using Microsoft.AspNetCore.Mvc;
-using MicroEndpoints.EndpointApp.DomainModel;
 
 namespace MicroEndpoints.EndpointApp.Endpoints.Authors;
 
 public class Query : EndpointBaseAsync
       .WithQuery<int, int>
-      .WithIResult
+      .WithResult<Author>
 {
     private IAsyncRepository<Author> _repository;
     private IMapper _mapper;
@@ -20,10 +20,8 @@ public class Query : EndpointBaseAsync
     }
 
     [Get("api/authors/query")]
-    public override Task<IResult> Handle(
+    public override Task<Author> HandleAsync([FromServices] IServiceProvider serviceProvider,
         int page,
-        int pageSize, CancellationToken cancellationToken = default)
-    {
-        throw new NotImplementedException();
-    }
+        int pageSize, CancellationToken cancellationToken = default) =>
+        _repository.GetByIdAsync(1, cancellationToken);
 }

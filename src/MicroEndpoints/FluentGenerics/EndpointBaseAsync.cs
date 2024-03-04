@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 
 namespace MicroEndpoints.FluentGenerics;
 
@@ -9,41 +10,41 @@ public static class EndpointBaseAsync
         /// <summary>
         /// Synchronous endpoint configuration with a request and a response.
         /// </summary>
-        public abstract class WithResult<TResponse> : EndpointConfigurationSyncBase
+        public abstract class WithResult<TResponse> : EndpointConfigurationAsyncBase
         {
             /// <summary>
             /// Handles the operation and returns a response.
             /// </summary>
             /// <param name="request">The request data.</param>
             /// <returns>The response data.</returns>
-            public abstract Task<TResponse> Handle(
+            public abstract Task<TResponse> HandleAsync([FromServices] IServiceProvider serviceProvider,
                 T1 firstParameter, CancellationToken cancellationToken = default);
         }
 
         /// <summary>
         /// Synchronous endpoint configuration with a request but without a response.
         /// </summary>
-        public abstract class WithoutResult : EndpointConfigurationSyncBase
+        public abstract class WithoutResult : EndpointConfigurationAsyncBase
         {
             /// <summary>
             /// Handles the operation.
             /// </summary>
             /// <param name="request">The request data.</param>
-            public abstract Task Handle(
+            public abstract Task HandleAsync([FromServices] IServiceProvider serviceProvider,
                 T1 firstParameter, CancellationToken cancellationToken = default);
         }
 
         /// <summary>
         /// Synchronous endpoint configuration with a request and an IResult response.
         /// </summary>
-        public abstract class WithIResult : EndpointConfigurationSyncBase
+        public abstract class WithIResult : EndpointConfigurationAsyncBase
         {
             /// <summary>
             /// Handles the operation and returns an IResult response.
             /// </summary>
             /// <param name="request">The request data.</param>
             /// <returns>The IResult response object.</returns>
-            public abstract Task<IResult> Handle(
+            public abstract Task<IResult> HandleAsync([FromServices] IServiceProvider serviceProvider,
                 T1 firstParameter, CancellationToken cancellationToken = default);
         }
     }
@@ -53,14 +54,14 @@ public static class EndpointBaseAsync
         /// <summary>
         /// Synchronous endpoint configuration with a request and a response.
         /// </summary>
-        public abstract class WithResult<TResponse> : EndpointConfigurationSyncBase
+        public abstract class WithResult<TResponse> : EndpointConfigurationAsyncBase
         {
             /// <summary>
             /// Handles the operation and returns a response.
             /// </summary>
             /// <param name="request">The request data.</param>
             /// <returns>The response data.</returns>
-            public abstract Task<TResponse> Handle(
+            public abstract Task<TResponse> HandleAsync([FromServices] IServiceProvider serviceProvider,
                 T1 firstParameter,
                 T2 secondParameter, CancellationToken cancellationToken = default);
         }
@@ -68,13 +69,13 @@ public static class EndpointBaseAsync
         /// <summary>
         /// Synchronous endpoint configuration with a request but without a response.
         /// </summary>
-        public abstract class WithoutResult : EndpointConfigurationSyncBase
+        public abstract class WithoutResult : EndpointConfigurationAsyncBase
         {
             /// <summary>
             /// Handles the operation.
             /// </summary>
             /// <param name="request">The request data.</param>
-            public abstract Task Handle(
+            public abstract Task HandleAsync([FromServices] IServiceProvider serviceProvider,
                 T1 firstParameter,
                 T2 secondParameter, CancellationToken cancellationToken = default);
         }
@@ -82,14 +83,14 @@ public static class EndpointBaseAsync
         /// <summary>
         /// Synchronous endpoint configuration with a request and an IResult response.
         /// </summary>
-        public abstract class WithIResult : EndpointConfigurationSyncBase
+        public abstract class WithIResult : EndpointConfigurationAsyncBase
         {
             /// <summary>
             /// Handles the operation and returns an IResult response.
             /// </summary>
             /// <param name="request">The request data.</param>
             /// <returns>The IResult response object.</returns>
-            public abstract Task<IResult> Handle(
+            public abstract Task<IResult> HandleAsync([FromServices] IServiceProvider serviceProvider,
                 T1 firstParameter,
                 T2 secondParameter, CancellationToken cancellationToken = default);
         }
@@ -100,14 +101,14 @@ public static class EndpointBaseAsync
         /// <summary>
         /// Synchronous endpoint configuration with a request and a response.
         /// </summary>
-        public abstract class WithResult<TResponse> : EndpointConfigurationSyncBase
+        public abstract class WithResult<TResponse> : EndpointConfigurationAsyncBase
         {
             /// <summary>
             /// Handles the operation and returns a response.
             /// </summary>
             /// <param name="request">The request data.</param>
             /// <returns>The response data.</returns>
-            public abstract Task<TResponse> Handle(
+            public abstract Task<TResponse> HandleAsync([FromServices] IServiceProvider serviceProvider,
                 T1 firstParameter,
                 T2 secondParameter,
                 T3 thirdParameter, CancellationToken cancellationToken = default);
@@ -116,13 +117,13 @@ public static class EndpointBaseAsync
         /// <summary>
         /// Synchronous endpoint configuration with a request but without a response.
         /// </summary>
-        public abstract class WithoutResult : EndpointConfigurationSyncBase
+        public abstract class WithoutResult : EndpointConfigurationAsyncBase
         {
             /// <summary>
             /// Handles the operation.
             /// </summary>
             /// <param name="request">The request data.</param>
-            public abstract void Handle(
+            public abstract void HandleAsync([FromServices] IServiceProvider serviceProvider,
                 T1 firstParameter,
                 T2 secondParameter,
                 T3 thirdParameter, CancellationToken cancellationToken = default);
@@ -131,14 +132,14 @@ public static class EndpointBaseAsync
         /// <summary>
         /// Synchronous endpoint configuration with a request and an IResult response.
         /// </summary>
-        public abstract class WithIResult : EndpointConfigurationSyncBase
+        public abstract class WithIResult : EndpointConfigurationAsyncBase
         {
             /// <summary>
             /// Handles the operation and returns an IResult response.
             /// </summary>
             /// <param name="request">The request data.</param>
             /// <returns>The IResult response object.</returns>
-            public abstract Task<IResult> Handle(
+            public abstract Task<IResult> HandleAsync([FromServices] IServiceProvider serviceProvider,
                 T1 firstParameter,
                 T2 secondParameter,
                 T3 thirdParameter, CancellationToken cancellationToken = default);
@@ -150,14 +151,14 @@ public static class EndpointBaseAsync
         /// <summary>
         /// Synchronous endpoint configuration with a request and a response.
         /// </summary>
-        public abstract class WithResult<TResponse> : EndpointConfigurationSyncBase
+        public abstract class WithResult<TResponse> : EndpointConfigurationAsyncBase
         {
             /// <summary>
             /// Handles the operation and returns a response.
             /// </summary>
             /// <param name="request">The request data.</param>
             /// <returns>The response data.</returns>
-            public abstract Task<TResponse> Handle(
+            public abstract Task<TResponse> HandleAsync([FromServices] IServiceProvider serviceProvider,
                 T1 firstParameter,
                 T2 secondParameter,
                 T3 thirdParameter,
@@ -167,13 +168,13 @@ public static class EndpointBaseAsync
         /// <summary>
         /// Synchronous endpoint configuration with a request but without a response.
         /// </summary>
-        public abstract class WithoutResult : EndpointConfigurationSyncBase
+        public abstract class WithoutResult : EndpointConfigurationAsyncBase
         {
             /// <summary>
             /// Handles the operation.
             /// </summary>
             /// <param name="request">The request data.</param>
-            public abstract void Handle(
+            public abstract void HandleAsync([FromServices] IServiceProvider serviceProvider,
                 T1 firstParameter,
                 T2 secondParameter,
                 T3 thirdParameter,
@@ -183,14 +184,14 @@ public static class EndpointBaseAsync
         /// <summary>
         /// Synchronous endpoint configuration with a request and an IResult response.
         /// </summary>
-        public abstract class WithIResult : EndpointConfigurationSyncBase
+        public abstract class WithIResult : EndpointConfigurationAsyncBase
         {
             /// <summary>
             /// Handles the operation and returns an IResult response.
             /// </summary>
             /// <param name="request">The request data.</param>
             /// <returns>The IResult response object.</returns>
-            public abstract Task<IResult> Handle(
+            public abstract Task<IResult> HandleAsync([FromServices] IServiceProvider serviceProvider,
                 T1 firstParameter,
                 T2 secondParameter,
                 T3 thirdParameter,
@@ -203,15 +204,15 @@ public static class EndpointBaseAsync
         /// <summary>
         /// Synchronous endpoint configuration with a request and a response.
         /// </summary>
-        public abstract class WithResult<TResponse> : EndpointConfigurationSyncBase
+        public abstract class WithResult<TResponse> : EndpointConfigurationAsyncBase
         {
             /// <summary>
             /// Handles the operation and returns a response.
             /// </summary>
             /// <param name="request">The request data.</param>
             /// <returns>The response data.</returns>
-            public abstract Task<TResponse> Handle(
-
+            public abstract Task<TResponse> HandleAsync(
+                [FromServices] IServiceProvider serviceProvider,
                 T1 firstParameter,
                 T2 secondParameter,
                 T3 thirdParameter,
@@ -222,13 +223,13 @@ public static class EndpointBaseAsync
         /// <summary>
         /// Synchronous endpoint configuration with a request but without a response.
         /// </summary>
-        public abstract class WithoutResult : EndpointConfigurationSyncBase
+        public abstract class WithoutResult : EndpointConfigurationAsyncBase
         {
             /// <summary>
             /// Handles the operation.
             /// </summary>
             /// <param name="request">The request data.</param>
-            public abstract void Handle(
+            public abstract void HandleAsync([FromServices] IServiceProvider serviceProvider,
                 T1 firstParameter,
                 T2 secondParameter,
                 T3 thirdParameter,
@@ -239,14 +240,14 @@ public static class EndpointBaseAsync
         /// <summary>
         /// Synchronous endpoint configuration with a request and an IResult response.
         /// </summary>
-        public abstract class WithIResult : EndpointConfigurationSyncBase
+        public abstract class WithIResult : EndpointConfigurationAsyncBase
         {
             /// <summary>
             /// Handles the operation and returns an IResult response.
             /// </summary>
             /// <param name="request">The request data.</param>
             /// <returns>The IResult response object.</returns>
-            public abstract Task<IResult> Handle(
+            public abstract Task<IResult> HandleAsync([FromServices] IServiceProvider serviceProvider,
                 T1 firstParameter,
                 T2 secondParameter,
                 T3 thirdParameter,
@@ -269,7 +270,7 @@ public static class EndpointBaseAsync
             /// <param name="request">The incoming request object.</param>
             /// <param name="cancellationToken">A token that can be used to cancel the operation.</param>
             /// <returns>A task that represents the asynchronous operation. The task result contains the response object.</returns>
-            public abstract Task<TResponse> HandleAsync(
+            public abstract Task<TResponse> HandleAsync([FromServices] IServiceProvider serviceProvider,
                 TRequest request, 
                 CancellationToken cancellationToken = default);
         }
@@ -286,6 +287,7 @@ public static class EndpointBaseAsync
             /// <param name="cancellationToken">A token that can be used to cancel the operation.</param>
             /// <returns>A task that represents the asynchronous operation.</returns>
             public abstract Task HandleAsync(
+                [FromServices] IServiceProvider serviceProvider,
                 TRequest request, CancellationToken cancellationToken = default);
         }
 
@@ -302,6 +304,7 @@ public static class EndpointBaseAsync
             /// <param name="cancellationToken">A token that can be used to cancel the operation.</param>
             /// <returns>A task that represents the asynchronous operation. The task result contains the IResult response object.</returns>
             public abstract Task<IResult> HandleAsync(
+                [FromServices] IServiceProvider serviceProvider,
                 TRequest request, CancellationToken cancellationToken = default);
         }
         /// <summary>
@@ -317,6 +320,7 @@ public static class EndpointBaseAsync
             /// <param name="cancellationToken">A token that can be used to cancel the operation.</param>
             /// <returns>An async enumerable that contains the response objects.</returns>
             public abstract IAsyncEnumerable<T> HandleAsync(
+                [FromServices] IServiceProvider serviceProvider,
                 TRequest request, CancellationToken cancellationToken = default);
         }
     }
@@ -335,6 +339,7 @@ public static class EndpointBaseAsync
             /// <param name="cancellationToken">A token that can be used to cancel the operation.</param>
             /// <returns>A task that represents the asynchronous operation. The task result contains the response object.</returns>
             public abstract Task<TResponse> HandleAsync(
+                [FromServices] IServiceProvider serviceProvider,
                 CancellationToken cancellationToken = default
       );
         }
@@ -351,6 +356,7 @@ public static class EndpointBaseAsync
             /// <param name="cancellationToken">A token that can be used to cancel the operation.</param>
             /// <returns>A task that represents the asynchronous operation.</returns>
             public abstract Task HandleAsync(
+                [FromServices] IServiceProvider serviceProvider,
                 CancellationToken cancellationToken = default
       );
         }
@@ -367,6 +373,7 @@ public static class EndpointBaseAsync
             /// <param name="cancellationToken">A token that can be used to cancel the operation.</param>
             /// <returns>A task that represents the asynchronous operation. The task result contains the IResult response object.</returns>
             public abstract Task<IResult> HandleAsync(
+                [FromServices] IServiceProvider serviceProvider,
                 CancellationToken cancellationToken = default
       );
         }
@@ -383,6 +390,7 @@ public static class EndpointBaseAsync
             /// <param name="cancellationToken">A token that can be used to cancel the operation.</param>
             /// <returns>An async enumerable that contains the response objects.</returns>
             public abstract IAsyncEnumerable<T> HandleAsync(
+                [FromServices] IServiceProvider serviceProvider,
                 CancellationToken cancellationToken = default
       );
         }

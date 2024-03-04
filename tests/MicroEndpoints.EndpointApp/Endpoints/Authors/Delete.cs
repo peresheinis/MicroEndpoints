@@ -20,7 +20,9 @@ public class Delete : EndpointBaseAsync
     /// Deletes an Author
     /// </summary>
     [Delete("api/authors/{id:int}")]
-    public override async Task<IResult> HandleAsync([FromRoute] int id, CancellationToken cancellationToken = default)
+    public override async Task<IResult> HandleAsync(
+        [FromServices] IServiceProvider serviceProvider,
+        [FromRoute] int id, CancellationToken cancellationToken = default)
     {
         var author = await _repository.GetByIdAsync(id, cancellationToken);
 

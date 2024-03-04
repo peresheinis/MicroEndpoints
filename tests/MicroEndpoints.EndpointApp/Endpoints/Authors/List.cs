@@ -23,7 +23,9 @@ public class List : EndpointBaseAsync
     /// List all Authors
     /// </summary>
     [Post("api/authors")]
-    public override async Task<IEnumerable<AuthorListResult>> HandleAsync([FromBody] AuthorListRequest request, CancellationToken cancellationToken = default)
+    public override async Task<IEnumerable<AuthorListResult>> HandleAsync(
+        [FromServices] IServiceProvider serviceProvider,
+        [FromBody] AuthorListRequest request, CancellationToken cancellationToken = default)
     {
         if (request.PerPage == 0)
         {

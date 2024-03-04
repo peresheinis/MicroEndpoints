@@ -21,7 +21,7 @@ public class ListJsonFile : EndpointBaseAsync
     /// List all Authors as a JSON file
     /// </summary>
     [Get("api/authors/Json")]
-    public override async Task<IResult> HandleAsync(CancellationToken cancellationToken = default)
+    public override async Task<IResult> HandleAsync([FromServices] IServiceProvider serviceProvider, CancellationToken cancellationToken = default)
     {
         var result = (await _repository.ListAllAsync(cancellationToken)).ToList();
 

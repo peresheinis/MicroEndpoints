@@ -16,6 +16,7 @@ public abstract class EndpointConfigurationBase : IEndpointConfiguration
     public void ConfigureEndpoint(WebApplication app)
     {
         var method = GetType().GetMethod(HandleName);
+
         if (method == null)
         {
             throw new Exception($"No method named {HandleName} found in {GetType().Name}");

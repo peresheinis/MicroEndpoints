@@ -20,7 +20,9 @@ public class Create : EndpointBaseAsync
     }
 
     [Post("api/authors")]
-    public override async Task<IResult> HandleAsync([FromBody] CreateAuthorCommand request, CancellationToken cancellationToken = default)
+    public override async Task<IResult> HandleAsync(
+        [FromServices] IServiceProvider serviceProvider,
+        [FromBody] CreateAuthorCommand request, CancellationToken cancellationToken = default)
     {
         var author = new Author();
         _mapper.Map(request, author);

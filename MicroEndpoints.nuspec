@@ -3,7 +3,7 @@
   <metadata>
     <id>Lebedeff.MicroEndpoints</id>
     <title>Micro Endpoints</title>
-    <version>2.0.3</version>
+    <version>3.0.1</version>
     <authors>Shady Nagy, Lebedeff</authors>
     <description>
 MicroEndpoints is a .NET library that simplifies creating HTTP endpoints in a minimalistic and clean manner. It's designed to work with .NET 8's Minimal APIs.
